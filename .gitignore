@@ -1,0 +1,16 @@
+# Données sensibles et clés d'API
+.env
+*.env
+config.json
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Fichiers systèmes
+*.log
+.DS_Store

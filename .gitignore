@@ -1,16 +1,9 @@
-# Données sensibles et clés d'API
+# Fichiers de configuration & clés d'API
 .env
-*.env
-config.json
+config.local.json
+secrets.json
 
-# Cache Python
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-venv/
-env/
-
-# Fichiers systèmes
+# Cache et dépendances
+node_modules/
 *.log
 .DS_Store

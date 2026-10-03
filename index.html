@@ -3,26 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARPH24 - Plateforme Executive ARPE</title>
+    <title>ARPH24 - Executive Business AI</title>
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="executive-header">
-            <div class="brand-section">
-                <div class="logo-hexagon"><i class="fa-solid fa-microchip"></i></div>
-                <div>
-                    <h1 class="brand-title">ARPH24 <span class="badge-v2">PRO V3.5</span></h1>
-                    <p class="brand-subtitle">Actif Représentant du Propriétaire d'Entreprise (ARPE)</p>
+    <div class="app-layout">
+        <!-- Barre Latérale de Navigation Executif -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon"><i class="fa-solid fa-brain"></i></div>
+                <div class="brand-info">
+                    <h2>ARPH24</h2>
+                    <span class="badge">SYSTEM V3.5</span>
                 </div>
             </div>
-        </header>
-        
-        <main class="chat-input-area">
-            <textarea id="promptInput" placeholder="Posez votre question..."></textarea>
-            <button class="btn-glow" id="sendBtn">Envoyer</button>
+
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-tab="chat-tab">
+                    <i class="fa-solid fa-message"></i> Agent Autonome
+                </button>
+                <button class="nav-btn" data-tab="connectors-tab">
+                    <i class="fa-solid fa-network-wired"></i> Connecteurs (ERP/CRM)
+                </button>
+                <button class="nav-btn" data-tab="settings-tab">
+                    <i class="fa-solid fa-sliders"></i> Paramètres Propriétaire
+                </button>
+            </nav>
+
+            <div class="system-status">
+                <div class="status-indicator online"></div>
+                <span>IA Active & Opérationnelle</span>
+            </div>
+        </aside>
+
+        <!-- Zone Principale -->
+        <main class="main-content">
+            <!-- Onglet 1 : Agent IA Chat -->
+            <section id="chat-tab" class="tab-content active">
+                <header class="top-bar">
+                    <h1>Actif Représentant du Propriétaire (ARPE)</h1>
+                    <p>Pilotage d'entreprise, automatisation et analyses stratégiques en temps réel.</p>
+                </header>
+
+                <div class="chat-container" id="chatBox">
+                    <div class="message system-msg">
+                        <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                        <div class="bubble">
+                            <strong>ARPH24 AI :</strong> Bonjour Espoir. Mon module d'autonomie est prêt. Vos connecteurs ERP, CRM, Email et WhatsApp peuvent être configurés dans l'onglet dédié.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-panel">
+                    <textarea id="promptInput" placeholder="Ordre exécutif ou instruction d'automatisation..."></textarea>
+                    <button id="sendBtn" class="btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Onglet 2 : Hub de Connecteurs -->
+            <section id="connectors-tab" class="tab-content">
+                <header class="top-bar">
+                    <h1>Hub d'Intégration Enterprise</h1>
+                    <p>Configurez les canaux de communication et outils métiers pour les collaborateurs et clients.</p>
+                </header>
+
+                <div class="connectors-grid">
+                    <!-- Connecteur ERP -->
+                    <div class="connector-card">
+                        <div class="card-icon erp"><i class="fa-solid fa-database"></i></div>
+                        <h3>Système ERP / SAP</h3>
+                        <p>Connexion aux bases de données stock, commandes et comptabilité.</p>
+                        <span class="status-tag active">Connecté</span>
+                        <button class="btn-secondary" onclick="configureConnector('ERP')">Gérer</button>
+                    </div>
+
+                    <!-- Connecteur CRM -->
+                    <div class="connector-card">
+                        <div class="card-icon crm"><i class="fa-solid fa-users-gear"></i></div>
+                        <h3>CRM HubSpot / Salesforce</h3>
+                        <p>Gestion automatique du pipeline client et opportunités commerciales.</p>
+                        <span class="status-tag active">Connecté</span>
+                        <button class="btn-secondary" onclick="configureConnector('CRM')">Gérer</button>
+                    </div>
+
+                    <!-- Connecteur WhatsApp -->
+                    <div class="connector-card">
+                        <div class="card-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+                        <h3>WhatsApp Business API</h3>
+                        <p>Relance automatique de la clientèle et support client automatisé.</p>
+                        <span class="status-tag pending">En Attente</span>
+                        <button class="btn-secondary" onclick="configureConnector('WhatsApp')">Configurer</button>
+                    </div>
+
+                    <!-- Connecteur Email -->
+                    <div class="connector-card">
+                        <div class="card-icon email"><i class="fa-solid fa-envelope"></i></div>
+                        <h3>Serveur Email SMTP/IMAP</h3>
+                        <p>Supervision des emails entrants et rédaction automatique de réponses.</p>
+                        <span class="status-tag active">Connecté</span>
+                        <button class="btn-secondary" onclick="configureConnector('Email')">Gérer</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Onglet 3 : Paramètres Propriétaire -->
+            <section id="settings-tab" class="tab-content">
+                <header class="top-bar">
+                    <h1>Configuration du Propriétaire</h1>
+                    <p>Définissez le niveau d'autonomie et les règles de gestion de l'IA.</p>
+                </header>
+                <div class="settings-card">
+                    <h3>Niveau d'Autonomie IA</h3>
+                    <p>L'IA peut exécuter des transactions et envoyer des messages sans validation préalable.</p>
+                    <button class="btn-primary">Ajuster la politique de gouvernance</button>
+                </div>
+            </section>
         </main>
     </div>
 

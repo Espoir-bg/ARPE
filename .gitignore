@@ -1,9 +1,0 @@
-# Fichiers de configuration & clés d'API
-.env
-config.local.json
-secrets.json
-
-# Cache et dépendances
-node_modules/
-*.log
-.DS_Store

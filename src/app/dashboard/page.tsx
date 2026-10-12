@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function DashboardPage() {
-  const [instruction, setInstruction] = className = useState("");
+  const [instruction, setInstruction] = useState("");
   const [loading, setLoading] = useState(false);
 
   const stats = [
@@ -160,4 +160,4 @@ export default function DashboardPage() {
       </div>
     </main>
   );
-     }
+}
